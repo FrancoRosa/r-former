@@ -1,0 +1,11 @@
+<h1>Welcome to my Index</h1>
+<% @user.each do |u| %>
+ <strong>User:</strong> <%= u.username %>
+ <ol>
+   <strong>Email:</strong> <%= u.email %> 
+   <br>
+   <%= link_to  "Edit", edit_user_path(@user) %>
+ </ol>
+ <br>
+<% end %>
+<%= link_to  "New user >> ", new_user_path %>

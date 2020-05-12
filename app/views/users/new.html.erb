@@ -1,10 +1,32 @@
-<h1>
-Stay Calm!
-<form action="/action_page.php" method="get">
-  <label for="fname">First name:</label>
-  <input type="text" id="fname" name="fname"><br><br>
-  <label for="lname">Last name:</label>
-  <input type="text" id="lname" name="lname"><br><br>
-  <input type="submit" value="Submit">
-</form>
-</h1>
+<body style="text-align: center;">
+  <h2 >New User Form</h2>
+  <%#
+  <form action="/users" method="POST" accept-charset="UTF-8">
+    <label>Usename:</label>
+    <input type="text" name="user[username]"><br><br>
+    <label>Email:</label>
+    <input type="text" name="user[email]"><br><br>
+    <label>Password:</label>
+    <input type="text" name="user[password]"><br><br>
+    <label>Confirm pass:</label>
+    <input type="text" name="user[password]"><br><br>
+    <input type="hidden" name="authenticity_token" value=  form_authenticity_token  >
+    <input type="submit" value="Submit">
+  </form>
+  %>
+
+
+  <%= form_for @user do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username, value: "Carlitos", placeholder: "????????????????" %><br />
+    <%= f.label :email %>
+    <%= f.text_field :email, placeholder: "my@email.com" %><br />
+    <%= f.label :password %>
+    <%= f.password_field :password, placeholder: "Safest pass please" %><br />
+    <%= f.submit %>
+  <% end %>
+
+<%= link_to  "Return to User Index", users_path %>
+
+</body>
+
